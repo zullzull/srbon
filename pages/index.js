@@ -4,9 +4,13 @@ import LayoutDefault from '../layouts/default'
 
 export default function Home() {
   return (
-    <div className='text-3xl font-bold underline'>
-      INI BODY
-    </div>
+    <section className="Homepage">
+      <section className="HeroSlide flex justify-center pb-6 md:pb-10">
+        <div className="w-screen max-w-screen-3xl">
+          INI BODY
+        </div>
+      </section>
+    </section>
   )
 }
 

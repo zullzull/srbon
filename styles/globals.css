@@ -1,3 +1,183 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+body {
+  @apply dark:bg-black dark:text-white overflow-x-hidden;
+}
+.wrapper-fluid {
+  @apply w-screen max-w-screen-3xl px-4 lg:px-6;
+}
+
+.wrapper-fluid-no-padding {
+  @apply w-screen max-w-screen-3xl;
+}
+
+.wrapper-fluid-no-padding-mobile {
+  @apply w-screen max-w-screen-3xl lg:px-6;
+}
+
+.wrapper {
+  @apply w-screen max-w-screen-3xl px-4 lg:px-6;
+}
+
+.wrapper-no-padding-mobile {
+  @apply w-screen max-w-screen-3xl lg:px-6;
+}
+
+.wrapper-medium {
+  @apply w-screen max-w-screen-xl px-4 lg:px-6;
+}
+
+.wrapper-narrow {
+  @apply w-screen max-w-xl px-4 lg:px-6;
+}
+
+.wrapper-narrow-extra-padding-mobile {
+  @apply w-screen max-w-xl px-8 lg:px-6;
+}
+
+h1,
+.h1 {
+  @apply text-3xl md:text-5xl font-serif;
+}
+
+h2,
+.h2 {
+  @apply text-2xl md:text-4xl font-serif;
+}
+
+h3,
+.h3 {
+  @apply text-xl md:text-2xl font-serif;
+}
+
+h4,
+.h4 {
+  @apply md:text-lg;
+}
+.btn,
+[class^='btn-'] {
+  @apply inline-flex items-center justify-center hover:opacity-90 transition-colors duration-150 text-sm h-11 px-12 whitespace-nowrap rounded-custom;
+
+  &:disabled {
+    @apply pointer-events-none;
+  }
+}
+
+.btn-black {
+  @apply bg-black text-white;
+  @apply dark:bg-white dark:text-black;
+
+  &-outline {
+    @apply border border-black text-black hover:bg-black hover:text-white;
+    @apply dark:border-[#222222] dark:text-white;
+  }
+}
+
+.btn-white {
+  @apply bg-white text-black;
+
+  &-outline {
+    @apply border border-white text-black;
+  }
+}
+
+.btn-primary {
+  @apply bg-primary text-primary-btn;
+
+  &-outline {
+    @apply border border-primary text-primary;
+  }
+}
+
+.dark {
+  .btn-primary {
+    @apply bg-[#111111] text-white;
+
+    &-outline {
+      @apply border border-[#111111] text-white;
+    }
+  }
+}
+
+.btn-secondary {
+  @apply hover:bg-gray-100;
+
+}
+
+.btn-link {
+  @apply underline p-0;
+}
+
+.btn-icon {
+  @apply space-x-2;
+}
+.overlay-backdrop {
+  @apply bg-black/30;
+  @apply dark:bg-black/80;
+}
+.glass-backdrop {
+  @apply backdrop-blur-xl bg-white/80;
+  @apply dark:bg-black/80;
+}
+.input-label {
+  @apply font-bold block text-sm text-gray-800 mb-2;
+  @apply dark:text-white;
+}
+.input-field {
+  @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full h-11 px-2.5 rounded-custom;
+  @apply dark:bg-[#111111] dark:text-white;
+}
+.textarea {
+  @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 rounded-custom;
+  @apply dark:bg-[#111111] dark:text-white;
+}
+.select {
+  @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block h-11 px-2.5 w-full appearance-none outline-none rounded-custom;
+  @apply dark:bg-[#111111] dark:text-white;
+}
+.alert {
+  @apply p-4 text-sm rounded-lg;
+
+  &.error {
+    @apply text-red-700 bg-red-100;
+  }
+
+  &.success {
+    @apply text-green-700 bg-green-100;
+  }
+
+  &.warning {
+    @apply text-orange-700 bg-orange-100;
+  }
+}
+.card {
+  @apply bg-white border p-4 md:p-6 transition rounded-custom;
+  @apply dark:bg-[#1a1a1a] dark:border-[#222222];
+}
+.is-show-filter-mobile {
+  @apply overflow-hidden lg:overflow-auto;
+}
+.load-line {
+  @apply w-full md:w-60 h-1 relative overflow-hidden bg-gray-300 rounded-2xl before:content-[""] before:absolute before:h-1 before:w-2/3 before:bg-primary before:rounded-2xl before:animate-[line_1s_linear_infinite];
+}
