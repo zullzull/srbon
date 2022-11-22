@@ -3,7 +3,6 @@ import User from "./models/user";
 import nextConfig from "./next.config";
 import { NextResponse } from "next/server";
 
-
 export async function middleware(request) {
   // const cookie = request.cookies.get('activeLogin')
   // console.log(cookie,'middleware')

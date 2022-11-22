@@ -1,22 +1,21 @@
-import LayoutDefault from '../layouts/default'
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import LayoutDefault from "../layouts/default";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Signin() {
-  const [input,setInput] = useState({
-    email: '',
-    password: ''
-  })
-  const [loading,setLoading] = useState(false)
-  const changeInput = (e)=>setInput({...input, [e.target.name] : e.target.value })
+  const [input, setInput] = useState({
+    email: "",
+    password: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const changeInput = (e) =>
+    setInput({ ...input, [e.target.name]: e.target.value });
 
-  const doLogin = async ()=>{
-    console.log('hello')
-  }
+  const doLogin = async () => {
+    console.log("hello");
+  };
 
-  useEffect(()=>{
-
-  },[loading, setLoading])
+  useEffect(() => {}, [loading, setLoading]);
 
   return (
     <section className="SignIn flex-grow flex items-center justify-center">
@@ -36,12 +35,8 @@ export default function Signin() {
         />
 
         <div className="relative">
-          <button
-            className="absolute top-1/2 -translate-y-1/2 right-4"
-          >
-            <i
-              className="text-gray-400 fa-regular fa-eye-slash"
-            ></i>
+          <button className="absolute top-1/2 -translate-y-1/2 right-4">
+            <i className="text-gray-400 fa-regular fa-eye-slash"></i>
           </button>
           <input
             type="password"
@@ -61,26 +56,26 @@ export default function Signin() {
             />
             <span>Keep me signed in</span>
           </label>
-          <Link href="/forgot-password" className="text-sm text-gray-500 underline">Forgot Password?</Link>
+          <Link
+            href="/forgot-password"
+            className="text-sm text-gray-500 underline"
+          >
+            Forgot Password?
+          </Link>
         </div>
 
-        <button
-          className="btn-black !h-14 !text-lg"
-          onClick={doLogin}
-        >
-          {
-            loading ? <i className="fas fa-spinner-third fa-spin"></i> : 'Sign In'
-          }
+        <button className="btn-black !h-14 !text-lg" onClick={doLogin}>
+          {loading ? (
+            <i className="fas fa-spinner-third fa-spin"></i>
+          ) : (
+            "Sign In"
+          )}
         </button>
       </div>
     </section>
-  )
+  );
 }
 
 Signin.getLayout = function getLayout(page) {
-  return (
-    <LayoutDefault>
-      {page}
-    </LayoutDefault>
-  )
-}
+  return <LayoutDefault>{page}</LayoutDefault>;
+};
